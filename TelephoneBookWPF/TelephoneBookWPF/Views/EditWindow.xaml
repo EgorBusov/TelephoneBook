@@ -1,0 +1,44 @@
+﻿<Window x:Class="TelephoneBookWPF.Views.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelephoneBookWPF.Views"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="320" Width="500">
+    <Grid Background="#FAEBD7">
+        <TextBox x:Name="textSurName" HorizontalAlignment="Left" Margin="150,20,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <TextBox x:Name="textName" HorizontalAlignment="Left" Margin="150,65,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <TextBox x:Name="textFatherName" HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <TextBox x:Name="textTelephone" HorizontalAlignment="Left" Margin="150,155,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <TextBox x:Name="textAddress" HorizontalAlignment="Left" Margin="150,200,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <TextBox x:Name="textDescription" HorizontalAlignment="Left" Margin="150,245,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="150" Height="25" Background="#FFDEAD"/>
+        <Label Content="Surname" HorizontalAlignment="Right" Margin="0,20,380,0" 
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Label Content="Name" HorizontalAlignment="Right" Margin="0,65,380,0" 
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Label Content="Fathername" HorizontalAlignment="Right" Margin="0,110,380,0"
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Label Content="Telephone" HorizontalAlignment="Right" Margin="0,155,380,0" 
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Label Content="Address" HorizontalAlignment="Right" Margin="0,200,380,0" 
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Label Content="Description" HorizontalAlignment="Right" Margin="0,245,380,0" 
+               VerticalAlignment="Top" FontSize="20" Padding="0" Background="#7FFFD4"/>
+        <Button x:Name="editButton" Content="Add" FontSize="20" HorizontalAlignment="Stretch" Background="#7B68EE"
+                Margin="400,210,30,30" VerticalAlignment="Stretch" Click="editButton_Click"/>
+        <Label x:Name="error" 
+               Foreground="Red" 
+               HorizontalAlignment="Left" 
+               Margin="320,110,0,0" 
+               VerticalAlignment="Top" 
+               Height="90" Width="160" 
+               Padding="0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css"/>
+  <link rel="stylesheet" href="/css/AllViewcss.css"/>
+  <link rel="stylesheet" href="/css/GetOnePersoneById.css"/>
+  <link rel="stylesheet" href="/css/PersoneAdd.css"/>
+  <link rel="stylesheet" href="/css/Denied.css"/>
+  <title>Phone book</title>
+</head>
+<body>
+    <header class="header">
+  <a href="/Persone/GetPersones">
+    <img class="logo" src="~/img/logo.jpg" alt="logo" />
+  </a>
+  <nav class="nav-links">
+    <ul>
+      <li><a href="/Account/GetUsers">Users</a></li>
+      <li><a href="/Persone/PersoneAdd">Add</a></li>
+      <li><a href = "/Account/Register">Register</a></li>
+      <li>
+        <form method="get" asp-controller="Account" asp-action="Logout" asp-antiforgery="true">
+          <input type="submit" value="Logout"/>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+    </footer>
+</body>
+</html>

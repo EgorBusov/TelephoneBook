@@ -1,0 +1,26 @@
+﻿.no-access {
+    background: #FFDEAD;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+}
+
+    .no-access p {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .no-access a {
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        border: 1px solid;
+        padding: 5px;
+        background: #7FFFD4;
+    }

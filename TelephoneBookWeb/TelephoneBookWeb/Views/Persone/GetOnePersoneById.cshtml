@@ -1,0 +1,51 @@
+﻿@model TelephoneBookWeb.Models.Persone
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="inf">
+      <p>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      </p>
+      <p>
+          <span class="fio">Surname</span>
+          <span class="span-inf">@Model.SurName</span>
+      </p>
+
+      <p>
+          <span class="fio">Name</span>
+          <span class="span-inf">@Model.Name</span>
+      </p>
+
+      <p>
+          <span class="fio">Fathername</span>
+          <span class="span-inf">@Model.FatherName</span>
+      </p>
+
+      <p>
+          <span class="fio">Telephone</span>
+          <span class="span-inf">@Model.Telephone</span>
+      </p>
+
+      <p>
+          <span class="fio">Address</span>
+          <span class="span-inf">@Model.Address</span>
+      </p>
+
+      <p>
+          <span class="fio">Description</span>
+          <span class="span-inf">@Model.Description</span>
+      </p>
+  </div>
+  <div class ="edit-delete-links">
+      <a class="edit-link" href="/Persone/PersoneEdit?id=@Model.Id">
+          <img src="/img/editImg.jpg" alt="Edit icon">
+      </a>
+
+      <a class="delete-link" asp-for="id" href="/Persone/PersoneDelete?id=@Model.Id" data-method="delete">
+        <img src="/img/deleteImg.jpg" alt="Delete icon">
+      </a>
+  </div>
+</body>
+
+</html>

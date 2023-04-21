@@ -1,0 +1,45 @@
+﻿<Window x:Name="UWindow"
+        x:Class="TelephoneBookWPF.Views.UsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelephoneBookWPF.Views"
+        mc:Ignorable="d"
+        Title="UsersWindow" Height="450" Width="800" Loaded="UWindow_Loaded">
+    <Grid Background="#FAEBD7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="listViewUsers" Grid.Row="1" Grid.Column="1"
+                  ItemsSource="{Binding}"
+                  Background="#FFDEAD">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="#7FFFD4"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Username}" Header="Username" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Role}" Header="Role" Width="200"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu x:Name="listViewContextMenu">
+                    <MenuItem x:Name="menuItemDelete" Header="Delete" Click="menuItemDelete_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <Button x:Name="backButton" Content="Back" HorizontalAlignment="Stretch" Margin="10,5,130,5" 
+                VerticalAlignment="Stretch" Click="backButton_Click" Background="#7B68EE"/>
+        <Label x:Name="error" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+               Foreground="Red" FontSize="15" Padding="0"/>
+    </Grid>
+</Window>

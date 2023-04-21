@@ -1,0 +1,36 @@
+﻿.persone-form label {
+    display: inline-block;
+    padding: 5px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #7FFFD4;
+    margin-right: 10px;
+}
+
+.persone-form input {
+    display: inline-block;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #FFDEAD;
+}
+
+.persone-form p {
+    margin-bottom: 20px;
+}
+
+.persone-form {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+    .persone-form button {
+        background-color: #7B68EE;
+        color: #FFFFFF;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }

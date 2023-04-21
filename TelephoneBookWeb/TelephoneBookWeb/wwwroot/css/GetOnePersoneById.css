@@ -1,0 +1,53 @@
+﻿.inf {
+    display: inline-block;
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+
+    .inf p {
+        margin-bottom: 20px;
+    }
+
+        .inf p:last-child {
+            margin-bottom: 0;
+        }
+
+.fio {
+    display: inline-block;
+    margin-right: 10px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #7FFFD4;
+}
+
+.span-inf {
+    display: inline-block;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #FFDEAD;
+}
+
+.edit-delete-links {
+    margin-left: 250px;
+}
+
+    .edit-delete-links a {
+        display: inline-block;
+    }
+
+    .edit-delete-links img {
+        border-radius: 5px;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+.edit-link,
+.delete-link img:last-child {
+    margin: 0;
+}

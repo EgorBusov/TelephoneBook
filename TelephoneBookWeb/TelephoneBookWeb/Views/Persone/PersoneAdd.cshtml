@@ -1,0 +1,42 @@
+﻿@model TelephoneBookWeb.Models.Persone
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <form class="persone-form" action="/Persone/PersoneAdd" method="post">
+        <p>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </p>
+        <p>
+            <label>Surname</label>    
+            <input asp-for="SurName" required/>
+        </p>
+        <p>
+            <label>Name</label>
+        <input asp-for="Name" required/>
+        </p>
+        <p>
+            <label>FatherName</label>
+        <input asp-for="FatherName" required/>
+        </p>
+        <p>
+            <label>Phone</label>
+        <input asp-for="Telephone" required/>
+        </p>
+        <p>
+            <label>Address</label>
+        <input asp-for="Address" required/>
+        </p>
+        <p>
+            <label>Description</label>
+        <input asp-for="Description" required/>
+        </p>
+
+        <button type="submit">Add</button>
+    </form>
+</body>
+
+</html>
