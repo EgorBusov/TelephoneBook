@@ -8,6 +8,6 @@ namespace TelephoneBookWPF.StaticComponents
 {
     public static class Paths
     {
-        public static string baseUrl { get; set; } = "https://localhost:7298/api";
+        public static string baseUrl { get; } = "https://localhost:7298/api";
     }
 }
