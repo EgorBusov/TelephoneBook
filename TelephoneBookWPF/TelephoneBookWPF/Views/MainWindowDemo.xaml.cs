@@ -24,25 +24,5 @@ namespace TelephoneBookWPF.Views
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Заполнение listview
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void MWindowDemo_Loaded(object sender, RoutedEventArgs e)
-        {
-            listViewPersones.ItemsSource = await User._apiRequests.GetPersones();
-        }
-        /// <summary>
-        /// Окно авторизации
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void loginButton_Click(object sender, RoutedEventArgs e)
-        {
-            AuthorizeWindow authorize = new AuthorizeWindow();
-            authorize.Show();
-            Close();
-        }
     }
 }

@@ -34,3 +34,4 @@ C:\Users\1\Desktop\C#\HomeWork21Test\TelephoneBookWPF\TelephoneBookWPF\obj\Debug
 C:\Users\1\Desktop\C#\HomeWork21Test\TelephoneBookWPF\TelephoneBookWPF\obj\Debug\net6.0-windows\Views\EditWindow.baml
 C:\Users\1\Desktop\C#\HomeWork21Test\TelephoneBookWPF\TelephoneBookWPF\obj\Debug\net6.0-windows\Views\UsersWindow.g.cs
 C:\Users\1\Desktop\C#\HomeWork21Test\TelephoneBookWPF\TelephoneBookWPF\obj\Debug\net6.0-windows\Views\UsersWindow.baml
+C:\Users\1\Desktop\C#\HomeWork21Test\TelephoneBookWPF\TelephoneBookWPF\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs

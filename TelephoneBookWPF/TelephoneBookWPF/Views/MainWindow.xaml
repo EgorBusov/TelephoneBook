@@ -5,9 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelephoneBookWPF"
+        xmlns:vm ="clr-namespace:TelephoneBookWPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" 
-        Loaded="LoadedMWindow">
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid Background="#FAEBD7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,7 +22,8 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <ListView x:Name="listViewPersones" Grid.Row="1" Grid.Column="1"
-                  ItemsSource="{Binding}"
+                  ItemsSource="{Binding Path=Persones}"
+                  SelectedItem="{Binding SelectedItem}"
                   Background="#FFDEAD">
             <ListView.Resources>
                 <Style TargetType="{x:Type GridViewColumnHeader}">
@@ -28,32 +32,32 @@
             </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="30"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding SurName}" Header="Surname" Width="120"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="120"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding FatherName}" Header="Fathername" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id" Width="30"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=SurName}" Header="Surname" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FatherName}" Header="Fathername" Width="120"/>
                 </GridView>
             </ListView.View>
             <ListView.ContextMenu>
                 <ContextMenu x:Name="listViewContextMenu">
-                    <MenuItem x:Name="menuItemEdit" Header="Edit" Click="menuItemEdit_Click"/>
-                    <MenuItem x:Name="menuItemDelete" Header="Delete" Click="menuItemDelete_Click"/>
+                    <MenuItem x:Name="menuItemEdit" Header="Edit" Command="{Binding EditCommand}"/>
+                    <MenuItem x:Name="menuItemDelete" Header="Delete" Command="{Binding DeleteCommand}"/>
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
         <DockPanel Grid.Row="0" Grid.Column="0">
             <Button x:Name="addButton" Margin="5,0,20,0" Grid.Row="0" Grid.Column="0" Background="#7B68EE"
-                    Width="50" HorizontalAlignment="Left" Content="Add" FontSize="15" Click="addButton_Click"/>
+                    Width="50" HorizontalAlignment="Left" Content="Add" FontSize="15" Command="{Binding AddPersoneCommand}"/>
             <Button x:Name="logoutButton" Margin="0,0,20,0" Grid.Row="0" Grid.Column="0" Background="#7B68EE"
-                    Width="50" HorizontalAlignment="Left" Content="Logout" FontSize="15" Click="logoutButton_Click"/>
+                    Width="50" HorizontalAlignment="Left" Content="Logout" FontSize="15" Command="{Binding LogoutCommand}" CommandParameter="{Binding ElementName=MWindow}"/>
             <Button x:Name="usersButton" Margin="0,0,5,0" Grid.Row="0" Grid.Column="0" Background="#7B68EE"
-                    Width="50" HorizontalAlignment="Left" Content="Users" FontSize="15" Click="usersButton_Click"/>
+                    Width="50" HorizontalAlignment="Left" Content="Users" FontSize="15" Command="{Binding UsersCommand}"/>
         </DockPanel>
         <Label x:Name="error" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
-               Foreground="Red" FontSize="15" Padding="0"/>
+               Foreground="Red" FontSize="15" Padding="0" Content="{Binding Path=ErrorContent}"/>
         <DockPanel Grid.Column="2" Grid.Row="0">
             <Button x:Name="updateButton" Grid.Column="2" Content="Update" HorizontalAlignment="Left" Background="#7B68EE"
-                    Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="15" Click="updateButton_Click"/>
+                    Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="15" Command="{Binding InitPersonesCommand}"/>
         </DockPanel>
     </Grid>
 </Window>

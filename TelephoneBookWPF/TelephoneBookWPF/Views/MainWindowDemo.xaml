@@ -5,8 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelephoneBookWPF.Views"
+        xmlns:vm ="clr-namespace:TelephoneBookWPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindowDemo" Height="450" Width="800" Loaded="MWindowDemo_Loaded">
+        Title="MainWindowDemo" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowDemoViewModel/>
+    </Window.DataContext>
     <Grid Background="#FAEBD7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -18,8 +22,10 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <ListView x:Name="listViewPersones" Grid.Row="1" Grid.Column="1"
-                  ItemsSource="{Binding}"
-                  Background="#FFDEAD">
+                  ItemsSource="{Binding Path=Persones}"
+                  SelectedItem="{Binding SelectedItem}"
+                  Background="#FFDEAD"
+                  >
             <ListView.Resources>
                 <Style TargetType="{x:Type GridViewColumnHeader}">
                     <Setter Property="Background" Value="#7FFFD4"/>
@@ -38,6 +44,8 @@
                 Margin="5,0,20,0" Background="#7B68EE"
                 Grid.Row="0" Grid.Column="0" Width="50" 
                 HorizontalAlignment="Left" 
-                Content="Login" FontSize="15" Click="loginButton_Click"/>
+                Content="Login" FontSize="15" 
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=MWindowDemo}"/>
     </Grid>
 </Window>

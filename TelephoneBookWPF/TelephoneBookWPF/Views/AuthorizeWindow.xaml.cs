@@ -27,81 +27,8 @@ namespace TelephoneBookWPF.Views
     public partial class AuthorizeWindow : Window
     {
         public AuthorizeWindow()
-        {
-            User._apiRequests = new ApiRequests(new HttpClient(), Paths.baseUrl);
-            InitializeComponent();
-        }
-        /// <summary>
-        /// Авторизация
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void authorizationButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (textLogin.Text == String.Empty || textPassword.Text == String.Empty) { error.Content = "заполните все поля"; return; }
-                UserModel userModel = new UserModel() { Username = textLogin.Text, Password = textPassword.Text };
-                TokenResponse token = await User._apiRequests.LoginRequest(userModel);
-                User._tokenResponse = token;
-                User._userModel = userModel;
-                MainWindow main = new MainWindow();
-                main.Show();
-                Close();
-            }
-            catch(HttpResponseException ex)
-            {
-                if (ex.Response.StatusCode == HttpStatusCode.Unauthorized)
-                {
-                    error.Content = "Пользователь не найден";
-                }
-                else
-                {
-                    error.Content = ex.Message;
-                }
-            }
-        }
-        /// <summary>
-        /// Регистрация
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void registerButton_Click(object sender, RoutedEventArgs e)
         {           
-            try
-            {
-                if (textLogin.Text == String.Empty || textPassword.Text == String.Empty) { error.Content = "заполните все поля"; return; }
-                UserModel userModel = new UserModel() { Username = textLogin.Text, Password = textPassword.Text };
-                TokenResponse token = await User._apiRequests.RegisterRequest(userModel);
-                User._tokenResponse = token;
-                User._userModel = userModel;
-                MainWindow main = new MainWindow();
-                main.Show();
-                Close();
-            }
-            catch (HttpResponseException ex)
-            {
-
-                if (ex.Response.StatusCode == HttpStatusCode.Conflict)
-                {
-                    error.Content = "Пользователь с таким логином уже существует";
-                }
-                else
-                {
-                    error.Content = ex.Message;
-                }
-            }
-        }
-        /// <summary>
-        /// Без регистрации
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void skipButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindowDemo main = new MainWindowDemo();
-            main.Show();
-            Close();
+            InitializeComponent();
         }
     }
 }

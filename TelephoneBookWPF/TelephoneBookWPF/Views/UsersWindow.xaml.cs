@@ -28,48 +28,5 @@ namespace TelephoneBookWPF.Views
         {
             InitializeComponent();           
         }
-
-        private async void menuItemDelete_Click(object sender, RoutedEventArgs e)
-        {
-            UserModel userModel = (UserModel)listViewUsers.SelectedItem;
-            if (userModel != null) { return; }
-            try
-            {
-                await User._apiRequests.DeleteUser(userModel.Username, User._tokenResponse.token);
-            }
-            catch (HttpResponseException ex)
-            {
-                if (ex.Response.StatusCode == HttpStatusCode.Unauthorized) { error.Content = "Авторизуйтесь"; }
-                else if (ex.Response.StatusCode == HttpStatusCode.Forbidden) { error.Content = "К сожалению у вас нет доступа"; }
-                else if (ex.Response.StatusCode == HttpStatusCode.NotFound) { error.Content = "Пользователь не найдет"; }
-                else
-                {
-                    error.Content = ex.Message;
-                }
-            }
-        }
-
-        private async void UWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                listViewUsers.ItemsSource = await User._apiRequests.GetUsers(User._tokenResponse.token);
-            }
-            catch (HttpResponseException ex)
-            {
-                if (ex.Response.StatusCode == HttpStatusCode.Unauthorized) { error.Content = "Авторизуйтесь"; }
-                else if (ex.Response.StatusCode == HttpStatusCode.Forbidden) { error.Content = "К сожалению у вас нет доступа"; }
-                else
-                {
-                    error.Content = ex.Message;
-                }
-            }
-
-        }
-
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
     }
 }
